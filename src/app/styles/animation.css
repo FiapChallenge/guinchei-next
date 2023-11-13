@@ -1,0 +1,84 @@
+.obs-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+  transition-delay: calc(var(--delay) * 100ms);
+}
+
+.obs-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes wavegradient {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes float {
+  0% {
+    /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+    transform: translateY(24px);
+  }
+
+  50% {
+    /* box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2); */
+    filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 0.2));
+    transform: translateY(-24px);
+  }
+
+  100% {
+    /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+    transform: translateY(24px);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0.1;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0.1;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0.1;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.fadeInDown {
+  opacity: 0.1;
+  animation-name: fadeInDown;
+}
